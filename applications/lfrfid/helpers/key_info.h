@@ -8,6 +8,7 @@ enum class LfrfidKeyType : uint8_t {
     KeyEM4100,
     KeyH10301,
     KeyI40134,
+    KeyIoProx, // TODO: figure out the right codename for this
 };
 
 const char* lfrfid_key_get_type_string(LfrfidKeyType type);

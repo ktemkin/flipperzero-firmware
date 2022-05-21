@@ -143,6 +143,11 @@ void RfidWriter::write_hid(const uint8_t hid_data[3]) {
     FURI_CRITICAL_EXIT();
 }
 
+void RfidWriter::write_ioprox(const uint8_t ioprox_data[3]) {
+    // FIXME: implement
+    (void)ioprox_data;
+}
+
 void RfidWriter::write_indala(const uint8_t indala_data[3]) {
     ProtocolIndala40134 indala_card;
     uint32_t card_data[2];

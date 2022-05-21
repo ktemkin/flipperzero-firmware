@@ -12,6 +12,9 @@ const char* lfrfid_key_get_type_string(LfrfidKeyType type) {
     case LfrfidKeyType::KeyI40134:
         return "I40134";
         break;
+    case LfrfidKeyType::KeyIoProx:
+        return "IoProx";
+        break;
     }
 
     return "Unknown";
@@ -28,6 +31,8 @@ const char* lfrfid_key_get_manufacturer_string(LfrfidKeyType type) {
     case LfrfidKeyType::KeyI40134:
         return "Indala";
         break;
+    case LfrfidKeyType::KeyIoProx:
+        return "Kantech";
     }
 
     return "Unknown";
@@ -42,6 +47,8 @@ bool lfrfid_key_get_string_type(const char* string, LfrfidKeyType* type) {
         *type = LfrfidKeyType::KeyH10301;
     } else if(strcmp("I40134", string) == 0) {
         *type = LfrfidKeyType::KeyI40134;
+    } else if(strcmp("IoProx", string) == 0) {
+        *type = LfrfidKeyType::KeyIoProx;
     } else {
         result = false;
     }
@@ -59,6 +66,9 @@ uint8_t lfrfid_key_get_type_data_count(LfrfidKeyType type) {
         break;
     case LfrfidKeyType::KeyI40134:
         return 3;
+        break;
+    case LfrfidKeyType::KeyIoProx:
+        return 4;
         break;
     }
 
