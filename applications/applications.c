@@ -37,6 +37,7 @@ extern int32_t lfrfid_debug_app(void* p);
 extern int32_t nfc_app(void* p);
 extern int32_t passport_app(void* p);
 extern int32_t scened_app(void* p);
+extern int32_t pirate_app(void* p);
 extern int32_t storage_test_app(void* p);
 extern int32_t subghz_app(void* p);
 extern int32_t usb_mouse_app(void* p);
@@ -270,6 +271,14 @@ const FlipperApplication FLIPPER_APPS[] = {
      .name = "Bad USB",
      .stack_size = 2048,
      .icon = &A_BadUsb_14,
+     .flags = FlipperApplicationFlagDefault},
+#endif
+
+#ifdef APP_PIRATE
+    {.app = pirate_app,
+     .name = "BusPirate Mode",
+     .stack_size = 1024,
+     .icon = &A_Pirate_14,
      .flags = FlipperApplicationFlagDefault},
 #endif
 

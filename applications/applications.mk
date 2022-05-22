@@ -42,6 +42,7 @@ APP_NFC		= 1
 APP_SUBGHZ	= 1
 APP_ABOUT	= 1
 APP_PASSPORT = 1
+APP_PIRATE  = 1
 APP_UPDATER = 1
 
 # Plugins
@@ -118,6 +119,13 @@ endif
 APP_PASSPORT ?= 0
 ifeq ($(APP_PASSPORT), 1)
 CFLAGS		+= -DAPP_PASSPORT
+SRV_GUI		= 1
+endif
+
+
+APP_PIRATE ?= 0
+ifeq ($(APP_PIRATE), 1)
+CFLAGS		+= -DAPP_PIRATE
 SRV_GUI		= 1
 endif
 
